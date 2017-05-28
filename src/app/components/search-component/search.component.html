@@ -1,0 +1,15 @@
+<h1>Searche Engine Star Wars</h1>
+
+<span *ngIf="boolInit === true">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search Zone"/>
+  <button (click)="searchByName()">Rechercher</button>
+
+  <span *ngIf="result != null">
+    <ul>
+      <li *ngFor="let item of result">
+        <p>{{ item.birth_year }} {{ item.gender }} {{ item.name }}</p>
+        <a [routerLink] ="['/detail', item.url]">Voir les détails</a>
+      </li>
+    </ul>
+  </span>
+</span>
